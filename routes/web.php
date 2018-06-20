@@ -40,8 +40,8 @@ Route::group(['middleware' => 'auth'], function () {
         
     });
     Route::group(['prefix' => 'users/{id}'], function () {
-        Route::post('favor', 'UserFavoriteController@store')->name('user.favor');
-        Route::delete('unfavor', 'UserFavoriteController@destroy')->name('user.unfavor');
+        Route::post('favor', 'UserFavorController@store')->name('user.favor');
+        Route::delete('unfavor', 'UserFavorController@destroy')->name('user.unfavor');
         Route::get('favorites', 'UsersController@favorites')->name('users.favorites');
         
     
