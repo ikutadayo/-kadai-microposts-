@@ -12,7 +12,7 @@
             <div>
                 <p>{!! nl2br(e($micropost->content)) !!}</p>
             </div>
-            <p>Favorites: {{ $count_micropost }}</p>
+            <p>Favorites: {{ $count_microposts }}</p>
             @include('user_favor.favor_button', ['micropost' => $micropost])
             <div>
                 @if (Auth::user()->id == $micropost->user_id)
