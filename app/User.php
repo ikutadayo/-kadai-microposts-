@@ -92,7 +92,7 @@ public function feed_microposts()
 
  public function favorites()
     {
-        return $this->belongsToMany(User::class, 'favorite', 'user_id', 'micropost_id')->withTimestamps();
+        return $this->belongsToMany(Micropost::class, 'favorite', 'user_id', 'micropost_id')->withTimestamps();
     }
 
 public function favor($micropostId)
@@ -116,18 +116,17 @@ public function favor($micropostId)
 
 public function unfavor($micropostId)
 {
-    // confirming if already following
+    
     $exist = $this->is_favoring($micropostId);
-    // confirming that it is not you
-    // $its_me = $this->id == $userId;
+    
 
 
     if ($exist) {
-        // stop following if favoriting
+        
         $this->favorites()->detach($micropostId);
         return true;
     } else {
-        // do nothing if not favorting
+        
         return false;
     }
 }

@@ -37,6 +37,7 @@ class MicropostsController extends Controller
                 'user' => $user,
                 'microposts' => $microposts,
             ];
+             return view('welcome', $data);
         }
             return view('welcome', $data);
         
@@ -63,7 +64,7 @@ class MicropostsController extends Controller
             'favorited' => $favorited,
         ];
 
-        $data += $this->count_micropst($micropost);
+        $data += $this->counts_micropst($micropost);
 
         return view('microposts.favorited', $data);
     }

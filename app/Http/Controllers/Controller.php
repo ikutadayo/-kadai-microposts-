@@ -26,11 +26,11 @@ class Controller extends BaseController
         ];
     }
     
-    public function counts_micropost($micropost) {
-        $count_microposts = $micropost->favorited()->count();
-        
+    public function counts_microposts($micropost) {
+        $counts_microposts = $micropost->favorited()->count();
+    
         return [
-            'count_microposts' => $count_microposts,
+            'counts_microposts' => $counts_microposts,
             ];
     }
     
